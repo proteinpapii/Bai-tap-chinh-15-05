@@ -118,3 +118,37 @@ btnTinh.onclick = function() {
     document.getElementById('tinhChuVi').innerHTML = chuVi;
 
 };
+
+
+// Bài 5: Tính tổng 2 ký số:
+
+// Input: Cho user nhập vào số nguyên dương có 2 ký số
+/* Progress: 
+    - Tạo sự kiện click cho button Tính tổng
+    - DOM tới input kySo lấy value
+    - Tạo biến hangChuc, donVi, sum
+    - Tách lấy số hàng chục theo công thức: 
+        + hangChuc = Math.floor(kySo / 10)
+    - Tách lấy số hàng đơn vị theo công thức:
+        + donVi = kySo % 10   
+    - Tính tổng: hangChuc + donVi
+    - In kết quả
+*/ 
+// Output: Show tổng của 2 ký số
+
+var btnTinhTong = document.getElementById('btnTinhTong');
+
+btnTinhTong.onclick = function() {
+    var kySo = document.getElementById('kySo').value;
+
+    var hangChuc;
+    var donVi;
+    var sum;
+
+    hangChuc = Math.floor(kySo / 10);
+    donVi = kySo % 10;
+    sum = hangChuc + donVi;
+
+    document.getElementById('tinhTong').innerHTML = sum;
+
+};
