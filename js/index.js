@@ -83,3 +83,38 @@ btnQuyDoi.onclick = function() {
 
     document.getElementById('quyDoiTien').innerHTML = new Intl.NumberFormat('vn-VN', { style: 'currency', currency: 'VND' }).format(exchange);
 };
+
+// Bài 4: Tính diện tích và chu vi
+
+// input: Cho user nhập vào giá trị chiều dài và chiều rộng
+/* Progress:
+    - Tạo sự kiện click cho button Tính
+    - DOM tới input nhập chiều dài để lấy value
+    - DOM tới input nhập chiều rộng để lấy value
+    - Chuyển string value => number value
+    - Tạo biến cho diện tích, chu vi
+    - Tạo hàm tính diện tích: chiều dài * chiều rộng
+    - chu vi: (chiều dài + chiều rộng) * 2
+    - Gán biến diện tích, chu vi cho các thẻ span
+*/ 
+// output: Xuất ra màn hình kết quả diện tích và chu vi
+
+var btnTinh = document.getElementById('btnTinh');
+
+btnTinh.onclick = function() {
+    var chieuDai = document.getElementById('chieuDai').value;
+    var chieuRong = document.getElementById('chieuRong').value;
+
+    chieuDai = parseInt(chieuDai);
+    chieuRong = parseInt(chieuRong);
+
+    var dienTich;
+    var chuVi;
+
+    dienTich = chieuDai * chieuRong;
+    chuVi = (chieuDai + chieuRong) * 2;
+
+    document.getElementById('tinhDienTich').innerHTML = dienTich;
+    document.getElementById('tinhChuVi').innerHTML = chuVi;
+
+};
